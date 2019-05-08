@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "apikey": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "refresh": {
+                    "description": "Set true to force re-process image transcription if the receipt is already in storage",
+                    "type": "boolean",
+                    "default": false
+                },
+                "incognito": {
+                    "description": "Set true to avoid saving the receipt in storage",
+                    "type": "boolean",
+                    "default": false
+                },
+                "ipAddress": {
+                    "description": "IP Address of the end user",
+                    "type": "string"
+                },
+                "primaryKeywords": {
+                    "description": "An array of primary keywords to match",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "secondaryKeywords": {
+                    "description": "An array of secondary keywords to match (lower confidence level than primaryKeywords)",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "stopWords": {
+                    "description": "An array of stop words that negate the result to be UNLIKELY",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "language": {
+                    "description": "Set language as a hint. Leave empty for auto detect. Supported languages: , en, es, fr, jp, he, iw, et, lv, lt, fi, el ",
+                    "type": "string",
+                    "enum": [
+                        "en",
+                        "es",
+                        "fr",
+                        "jp",
+                        "he",
+                        "iw",
+                        "et",
+                        "lv",
+                        "lt",
+                        "fi",
+                        "el"
+                    ]
+                }
+            }
+        }
+    }
+}

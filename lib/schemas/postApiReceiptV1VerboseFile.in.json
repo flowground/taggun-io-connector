@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "apikey": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "refresh": {
+                    "description": "Set true to force re-process image transcription if the receipt is already in storage",
+                    "type": "boolean",
+                    "default": false
+                },
+                "incognito": {
+                    "description": "Set true to avoid saving the receipt in storage",
+                    "type": "boolean",
+                    "default": false
+                },
+                "ipAddress": {
+                    "description": "IP Address of the end user",
+                    "type": "string"
+                },
+                "near": {
+                    "description": "A geo location to search for merchant. Typically in the format of city, state, country.",
+                    "type": "string"
+                },
+                "ignoreMerchantName": {
+                    "description": "Ignore this merchant name if detected on the receipt. Use this field to avoid detecting the customer name as the merchant name.",
+                    "type": "string"
+                },
+                "language": {
+                    "description": "Set language as a hint. Leave empty for auto detect. Supported languages: , en, es, fr, jp, he, iw, et, lv, lt, fi, el ",
+                    "type": "string",
+                    "enum": [
+                        "en",
+                        "es",
+                        "fr",
+                        "jp",
+                        "he",
+                        "iw",
+                        "et",
+                        "lv",
+                        "lt",
+                        "fi",
+                        "el"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,198 @@
+{
+    "title": "taggun.io",
+    "description": "Expects only running software, real reactions, and beautifully crafted APIs to serve your every desire to transcribe a piece of paper to digital form.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/taggun.io/1.2.97/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.taggun.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apikey": {
+                "label": "apikey (apikey)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "postApiAccountV1MerchantnameAdd": {
+            "main": "./lib/actions/postApiAccountV1MerchantnameAdd.js",
+            "title": "add a keyword to your account's model to predict merchant name",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiAccountV1MerchantnameAdd.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1MatchFile": {
+            "main": "./lib/actions/postApiReceiptV1MatchFile.js",
+            "title": "detect and match a receipt against keywords and metadata by uploading an image file",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1MatchFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1SimpleEncoded": {
+            "main": "./lib/actions/postApiReceiptV1SimpleEncoded.js",
+            "title": "transcribe a receipt using base64 encoded image in json payload",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1SimpleEncoded.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1SimpleFile": {
+            "main": "./lib/actions/postApiReceiptV1SimpleFile.js",
+            "title": "transcribe a receipt by uploading an image file",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1SimpleFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1SimpleStorage": {
+            "main": "./lib/actions/postApiReceiptV1SimpleStorage.js",
+            "title": "transcribe a receipt in storage",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1SimpleStorage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1SimpleUrl": {
+            "main": "./lib/actions/postApiReceiptV1SimpleUrl.js",
+            "title": "transcribe a receipt from URL",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1SimpleUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1VerboseEncoded": {
+            "main": "./lib/actions/postApiReceiptV1VerboseEncoded.js",
+            "title": "transcribe a receipt using base64 encoded image in json payload and return detailed result",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1VerboseEncoded.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1VerboseFile": {
+            "main": "./lib/actions/postApiReceiptV1VerboseFile.js",
+            "title": "transcribe a receipt by uploading an image file and return detailed result",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1VerboseFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1VerboseStorage": {
+            "main": "./lib/actions/postApiReceiptV1VerboseStorage.js",
+            "title": "transcribe a receipt in storage and return detailed result",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1VerboseStorage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postApiReceiptV1VerboseUrl": {
+            "main": "./lib/actions/postApiReceiptV1VerboseUrl.js",
+            "title": "transcribe a receipt from URL and return detailed result",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postApiReceiptV1VerboseUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
